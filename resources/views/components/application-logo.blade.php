@@ -1,0 +1,1 @@
+<img src="{{ asset('logo/suitcase-job.png') }}" width="50px">
