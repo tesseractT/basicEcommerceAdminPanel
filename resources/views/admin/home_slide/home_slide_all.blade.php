@@ -12,42 +12,44 @@
                 <div class="card">
                     <div class="card-body">
 
-                        <h4 class="card-title">Edit Profile Page</h4>
+                        <h4 class="card-title">Home Slide Page</h4>
 
-                        <form method="post" action="{{route('store.profile')}}" enctype="multipart/form-data"> @csrf
+                        <form method="post" action="{{route('update.slider')}}" enctype="multipart/form-data"> @csrf
+
+                            <input type="hidden" name="id" value="{{$homeslide->id}}" />
 
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Name</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="name" type="text" value="{{$editData->name}}" id="example-text-input">
+                                    <input class="form-control" name="title" type="text" value="{{$homeslide->title}}" id="example-text-input">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">User Email</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Sub Title</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="email" type="email" value="{{$editData->email}}" id="example-text-input">
+                                    <input class="form-control" name="sub_title" type="text" value="{{$homeslide->sub_title}}" id="example-text-input">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Username</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Video URL</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="username" type="text" value="{{$editData->username}}" id="example-text-input">
+                                    <input class="form-control" name="video_url" type="text" value="{{$homeslide->video_url}}" id="example-text-input">
                                 </div>
                             </div>
                             <div class="row mb-3">
-                                <label for="example-text-input" class="col-sm-2 col-form-label">Profile Image</label>
+                                <label for="example-text-input" class="col-sm-2 col-form-label">Home Slider Image</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="profile_image" type="file" id="image">
+                                    <input class="form-control" name="home_slide_image" type="file" id="home_slide_image">
                                 </div>
                             </div>
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label"></label>
                                 <div class="col-sm-10">
-                                    <img id="showImage" class="rounded avatar-lg" src="{{(!empty($editData->profile_image))? url('uploads/admin_images/'.$editData->profile_image) : url('uploads/no_image.jpg') }}" alt="Card image cap">
+                                    <img id="showImage" class="rounded avatar-lg" src="{{(!empty($homeslide->home_slide_image))? url($homeslide->home_slide_image) : url('uploads/no_image.jpg') }}" alt="Card image cap">
 
                                 </div>
                             </div>
-                            <input type="submit" value="Update Profile" class="btn btn-info waves-effect waves-light">
+                            <input type="submit" value="Update Slide" class="btn btn-info waves-effect waves-light">
                         </form>
                         <!-- end row -->
 
