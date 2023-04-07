@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Dashboard | Upcube - Admin & Dashboard Template</title>
+    <title>Dashboard | Admin </title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesdesign" name="author" />
@@ -116,7 +116,12 @@
         }
         @endif
     </script>
-</script>
+    </script>
+    <!--tinymce js-->
+    <script src="{{asset('backend/assets/libs/tinymce/tinymce.min.js')}}"></script>
+
+    <!-- init js -->
+    <script src="{{asset('backend/assets/js/pages/form-editor.init.js')}}"></script>
 
 </body>
 
