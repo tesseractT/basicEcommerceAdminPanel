@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('multi_image_uploads', function (Blueprint $table) {
             $table->id();
+            $table->string('multi_image_uploads')->nullable();
             $table->timestamps();
         });
     }
