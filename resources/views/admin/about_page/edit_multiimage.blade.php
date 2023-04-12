@@ -22,7 +22,7 @@
                             <div class="row mb-3">
                                 <label for="example-text-input" class="col-sm-2 col-form-label">About Multi Image Upload</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="multi_image_uploads[]" type="file" multiple="" id="multi_image_uploads">
+                                    <input class="form-control" name="multi_image_uploads" type="file" multiple="" id="multi_image_uploads">
                                 </div>
                             </div>
                             <div class="row mb-3">
