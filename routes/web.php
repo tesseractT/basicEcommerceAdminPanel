@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
+use App\Http\Controllers\Home\PortfolioController;
+
 
 
 /*
@@ -53,6 +55,13 @@ Route::controller(AboutController::class)->group(function () {
     Route::post('/update/about', 'UpdateAbout')->name('update.about');
     Route::post('/store/multi/image', 'StoreMultiImage')->name('store.multi.image');
     Route::post('/update/multi/image', 'UpdateMultiImage')->name('update.multi.image');
+});
+
+// Portfolio routes
+Route::controller(PortfolioController::class)->group(function () {
+    Route::get('/all/portfolio', 'AllPortfolio')->name('all.portfolio');
+    Route::get('/add/portfolio', 'AddPortfolio')->name('add.portfolio');
+
 });
 
 // Route::middleware('auth')->group(function () {
