@@ -10,6 +10,8 @@ use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
 use App\Http\Controllers\Home\ContactController;
+use App\Http\Controllers\Demo\DemoController;
+
 
 
 /*
@@ -23,8 +25,12 @@ use App\Http\Controllers\Home\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index');
+// Route::get('/', function () {
+//     return view('frontend.index');
+// });
+
+Route::controller(DemoController::class)->group(function () {
+    Route::get('/', 'HomeMain')->name('home');
 });
 
 Route::get('/dashboard', function () {
@@ -32,13 +38,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // All Admin routes
-Route::controller(AdminController::class)->group(function () {
-    Route::get('/admin/logout', 'destroy')->name('admin.logout');
-    Route::get('/admin/profile', 'Profile')->name('admin.profile');
-    Route::get('/edit/profile', 'EditProfile')->name('edit.profile');
-    Route::get('/change/password', 'ChangePassword')->name('change.password');
-    Route::post('/update/password', 'UpdatePassword')->name('update.password');
-    Route::post('/store/profile', 'StoreProfile')->name('store.profile');
+
+Route::middleware(['auth'])->group(function(){
+    Route::controller(AdminController::class)->group(function () {
+        Route::get('/admin/logout', 'destroy')->name('admin.logout');
+        Route::get('/admin/profile', 'Profile')->name('admin.profile');
+        Route::get('/edit/profile', 'EditProfile')->name('edit.profile');
+        Route::get('/change/password', 'ChangePassword')->name('change.password');
+        Route::post('/update/password', 'UpdatePassword')->name('update.password');
+        Route::post('/store/profile', 'StoreProfile')->name('store.profile');
+    });
 });
 
 // Home Slide Routes
@@ -67,7 +76,7 @@ Route::controller(PortfolioController::class)->group(function () {
     Route::get('/edit/portfolio/{id}', 'EditPortfolio')->name('edit.portfolio');
     Route::get('/delete/portfolio/{id}', 'DeletePortfolio')->name('delete.portfolio');
     Route::get('/portfolio/details/{id}', 'PortfolioDetails')->name('portfolio.details');
-
+    Route::get('/portfolio', 'Portfolio')->name('home.portfolio');
     Route::post('/store/portfolio', 'StorePortfolio')->name('store.portfolio');
     Route::post('/update/portfolio', 'UpdatePortfolio')->name('update.portfolio');
 });
@@ -80,7 +89,6 @@ Route::controller(BlogCategoryController::class)->group(function () {
     Route::get('/delete/blog/category/{id}', 'DeleteBlogCategory')->name('delete.blog.category');
     Route::post('/store/blog/category', 'StoreBlogCategory')->name('store.blog.category');
     Route::post('/update/blog/category/{id}', 'UpdateBlogCategory')->name('update.blog.category');
-
 });
 
 // Blog Routes
@@ -108,8 +116,6 @@ Route::controller(ContactController::class)->group(function () {
     Route::post('/store/message', 'StoreMessage')->name('store.message');
     Route::get('/contact/message', 'ContactMessage')->name('contact.message');
     Route::get('/delete/message/{id}', 'DeleteMessage')->name('delete.message');
-
-
 });
 
 

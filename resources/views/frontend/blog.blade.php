@@ -1,5 +1,8 @@
 @extends('frontend.main_master')
 @section('main')
+@section('title')
+    Blog | Benny
+@endsection
 <main>
 
     <!-- breadcrumb-area -->
