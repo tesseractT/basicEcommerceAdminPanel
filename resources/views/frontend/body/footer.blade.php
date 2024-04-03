@@ -8,10 +8,10 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">{{$allfooter->number}}</h4>
+                        <h4 class="title">{{$allfooter?->number}}</h4>
                     </div>
                     <div class="footer__widget__text">
-                        <p>{{$allfooter->short_description}}</p>
+                        <p>{{$allfooter?->short_description}}</p>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@
                         <h4 class="title">AUSTRALIA</h4>
                     </div>
                     <div class="footer__widget__address">
-                        <p>{{$allfooter->address}}</p>
-                        <a href="{{$allfooter->email}}" class="mail">{{$allfooter->email}}</a>
+                        <p>{{$allfooter?->address}}</p>
+                        <a href="{{$allfooter?->email}}" class="mail">{{$allfooter?->email}}</a>
                     </div>
                 </div>
             </div>
@@ -36,11 +36,11 @@
                     <div class="footer__widget__social">
                         <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
                         <ul class="footer__social__list">
-                            <li><a href="{{$allfooter->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="{{$allfooter->twitter}}"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="{{$allfooter->github}}"><i class="fab fa-github"></i></a></li>
-                            <li><a href="{{$allfooter->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="{{$allfooter->instagram}}"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{$allfooter?->facebook}}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{$allfooter?->twitter}}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{$allfooter?->github}}"><i class="fab fa-github"></i></a></li>
+                            <li><a href="{{$allfooter?->linkedin}}"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="{{$allfooter?->instagram}}"><i class="fab fa-instagram"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>{{$allfooter->copyright}}</p>
+                        <p>{{$allfooter?->copyright}}</p>
                     </div>
                 </div>
             </div>

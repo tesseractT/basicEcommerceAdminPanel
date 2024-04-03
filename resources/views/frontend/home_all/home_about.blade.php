@@ -11,7 +11,7 @@
                 <ul class="about__icons__wrap">
                     @foreach ($allMultiImage as $item)
                     <li>
-                        <img class="light" src="{{asset($item->multi_image_uploads)}}" alt="XD">
+                        <img class="light" src="{{asset($item?->multi_image_uploads)}}" alt="XD">
 
                     </li>
                     @endforeach
@@ -21,17 +21,17 @@
                 <div class="about__content">
                     <div class="section__title">
                         <span class="sub-title">01 - About me</span>
-                        <h2 class="title">{{$aboutpage->title}}</h2>
+                        <h2 class="title">{{$aboutpage?->title}}</h2>
                     </div>
                     <div class="about__exp">
                         <div class="about__exp__icon">
                             <img src="{{asset('frontend/assets/img/icons/about_icon.png')}}" alt="">
                         </div>
                         <div class="about__exp__content">
-                            <p>{{$aboutpage->sub_title}}</p>
+                            <p>{{$aboutpage?->sub_title}}</p>
                         </div>
                     </div>
-                    <p class="desc">{{$aboutpage->short_description}}</p>
+                    <p class="desc">{{$aboutpage?->short_description}}</p>
                     <a href="about.html" class="btn">Download my resume</a>
                 </div>
             </div>
